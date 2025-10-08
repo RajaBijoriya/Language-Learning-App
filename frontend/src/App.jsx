@@ -11,10 +11,10 @@ function App() {
 
   return (
     <div>
-     {/* <WelcomeScreen/>
+     <WelcomeScreen/>
      <SignUp/>
      <PasswordScreen/>
-     <ResetPassword/> */}
+     <ResetPassword/> 
      <PremiumScreen/>
     </div>
   )

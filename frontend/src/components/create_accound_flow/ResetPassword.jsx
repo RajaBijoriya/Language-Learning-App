@@ -1,43 +1,50 @@
+import React from "react";
 import { Button, PasswordInput } from "@mantine/core";
 import { IconArrowLeft, IconMoon } from "@tabler/icons-react";
-import React from "react";
 
 const ResetPassword = () => {
   return (
-    <div className="w-full flex-col justify-center items-center">
-      <div className="w-full flex items-center justify-between px-6 py-12">
-        {/* Left icon */}
-        <button>
-          <IconArrowLeft size={32} stroke={1.5} />
+    <div className="w-full min-h-screen flex flex-col items-center bg-white px-4 py-6 sm:px-8 md:px-12">
+      {/* Top Navigation */}
+      <div className="w-full flex items-center justify-between mb-8">
+        <button
+          aria-label="Go back"
+          className="p-2 hover:bg-gray-100 rounded-full transition">
+          <IconArrowLeft size={28} stroke={1.5} />
         </button>
 
-        {/* Right icon */}
-        <button>
-          <IconMoon size={32} stroke={1.5} />
+        <button
+          aria-label="Toggle dark mode"
+          className="p-2 hover:bg-gray-100 rounded-full transition">
+          <IconMoon size={28} stroke={1.5} />
         </button>
       </div>
 
-      <div className="mr-7 ml-7">
-        <h1 className="text-2xl">Enter Your Password</h1>
-        <div className="mt-4">
-          <PasswordInput
-            variant="filled"
-            size="lg"
-            radius="md"
-            withAsterisk
-            description="password"
-            placeholder="Input placeholder"
-          />
-        </div>
+      {/* Page Title */}
+      <div className="w-full sm:w-[80%] md:w-[60%] text-left mt-6">
+        <h1 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">
+          Enter Your Password
+        </h1>
+
+        {/* Password Input */}
+        <PasswordInput
+          variant="filled"
+          size="lg"
+          radius="md"
+          withAsterisk
+          placeholder="Enter your password"
+          className="text-base"
+        />
       </div>
 
-      <div className="w-[80%] flex flex-col mt-120 gap-10 justify-center">
+      {/* Continue Button */}
+      <div className="w-full sm:w-[80%] md:w-[60%] mt-10">
         <Button
-          className="top-5 mr-10 ml-10"
-          color="red"
+          color="#007AFF"
           radius="md"
           size="lg"
-          fullWidth>
+          fullWidth
+          className="font-medium text-base sm:text-lg hover:opacity-90 transition">
           Continue
         </Button>
       </div>
