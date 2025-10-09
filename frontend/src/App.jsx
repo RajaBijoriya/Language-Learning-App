@@ -1,5 +1,7 @@
 
 import './App.css'
+import BookScreen from './components/App_Screen/BookScreen'
+import StartScreen from './components/App_Screen/StartScreen'
 import PasswordScreen from './components/create_accound_flow/PasswordScreen'
 import ResetPassword from './components/create_accound_flow/ResetPassword'
 import SignUp from './components/create_accound_flow/SignUp'
@@ -11,11 +13,13 @@ function App() {
 
   return (
     <div>
-     <WelcomeScreen/>
+     {/* <WelcomeScreen/>
      <SignUp/>
      <PasswordScreen/>
-     <ResetPassword/> 
-     <PremiumScreen/>
+     <ResetPassword/>  */}
+     {/* <PremiumScreen/> */}
+     {/* <StartScreen/> */}
+     <BookScreen/>
     </div>
   )
 }
