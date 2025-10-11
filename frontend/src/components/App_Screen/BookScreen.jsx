@@ -1,7 +1,8 @@
 import React from 'react'
 import LevelBox from './combobox/LevelBox'
-import { IconBell, IconFileStarFilled, IconFlame, IconStar } from '@tabler/icons-react';
+import { IconBell, IconBookmark, IconFileStarFilled, IconFlame, IconStar } from '@tabler/icons-react';
 import { Progress } from '@mantine/core';
+import image1 from "../../assets/Image.png"
 import premium_card from '../../assets/Premium Card.png'
 const BookScreen = () => {
   return (
@@ -31,17 +32,58 @@ const BookScreen = () => {
           <div className="flex gap-56">
             <LevelBox size={30} />
             <div className="flex ">
-              <IconFileStarFilled />
+              <IconFileStarFilled size={30} />
             </div>
           </div>
         </div>
       </div>
 
-      <div className='mt-10 mr-8'>
-        <Progress value={10} color='blue' size="xl"/>
+      <div className="mt-10 mr-8">
+        <Progress value={10} color="blue" size="xl" />
       </div>
-      <div className='mt-10 flex justify-center mr-7' >
-    <img className='w-92 md:w-120 xl:w-150'  src={premium_card} alt="" />
+      <div className="mt-10 flex justify-center mr-7">
+        <img className="w-92 md:w-120 xl:w-150" src={premium_card} alt="" />
+      </div>
+
+      <div className="flex-col justify-center items-center w-full mt-8 ">
+        <div className="flex justify-around items-center">
+          <h1 className="text-2xl font-semibold text-gray-700">Chapter - 1</h1>
+          <h1 className="w-8 h-1 bg-gray-700 rounded-2xl"></h1>
+          <h1 className="text-2xl font-semibold text-blue-400">Traveling</h1>
+        </div>
+
+        <div className="flex justify-between mr-8 ml-8 items-center mt-2">
+          <h1 className="text-lg text-gray-600">Lessons completed</h1>
+          <h1 className="text-lg text-blue-500">0/5</h1>
+        </div>
+
+        <div className="flex justify-center mt-8 px-4">
+          <div className="flex  sm:flex-row justify-between items-center bg-blue-50 rounded-2xl w-full max-w-3xl shadow-sm p-4 sm:p-6 gap-4 sm:gap-6">
+            {/* Left Section: Image + Text */}
+            <div className="flex justify-center items-center gap-3 sm:gap-4">
+              <div className="border-blue-500 border-4 rounded-full flex justify-center items-center p-1">
+                <img
+                  src={image1}
+                  alt=""
+                  className="rounded-full w-14 sm:w-16 md:w-20 object-cover"
+                />
+              </div>
+              <h1 className="text-lg sm:text-xl md:text-2xl text-gray-600 font-semibold text-center sm:text-left leading-snug">
+                We're going on <br /> vacation
+              </h1>
+            </div>
+
+            {/* Right Section: Bookmark Icon */}
+            <div className="flex justify-center sm:justify-end">
+              <div className="border-2 border-blue-500 rounded-xl p-1 sm:p-2 hover:bg-blue-100 transition">
+                <IconBookmark
+                  size={28}
+                  className=" cursor-pointer"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

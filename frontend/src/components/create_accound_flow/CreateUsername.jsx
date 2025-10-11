@@ -1,24 +1,13 @@
 import React from "react";
 import { Button, Input, PasswordInput } from "@mantine/core";
 import { IconArrowLeft, IconMoon } from "@tabler/icons-react";
+import LeftArrowAndTheme from "../LeftArrowAndTheme";
 
 const CreateUsername = () => {
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-white px-4 py-6 sm:px-8 md:px-12">
       {/* Top Navigation */}
-      <div className="w-full flex items-center justify-between mb-8">
-        <button
-          aria-label="Go back"
-          className="p-2 hover:bg-gray-100 rounded-full transition">
-          <IconArrowLeft size={28} stroke={1.5} />
-        </button>
-
-        <button
-          aria-label="Toggle dark mode"
-          className="p-2 hover:bg-gray-100 rounded-full transition">
-          <IconMoon size={28} stroke={1.5} />
-        </button>
-      </div>
+<LeftArrowAndTheme/>
 
       {/* Page Title */}
       <div className="w-full sm:w-[80%] md:w-[60%] text-left mt-6">

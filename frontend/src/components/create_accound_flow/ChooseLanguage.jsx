@@ -5,23 +5,13 @@ import img1 from "../../assets/Flags/Flag (1).png";
 import img2 from "../../assets/Flags/Flag (2).png";
 import img3 from "../../assets/Flags/Flag (3).png";
 import img4 from "../../assets/Flags/Flag (4).png";
+import LeftArrowAndTheme from "../LeftArrowAndTheme";
 
 const ChooseLanguage = () => {
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-white px-4 py-6 sm:px-8 md:px-12 lg:px-24">
       {/* Top Navigation */}
-      <div className="w-full flex items-center justify-between mb-8">
-        <button
-          aria-label="Go back"
-          className="p-2 hover:bg-gray-100 rounded-full transition">
-          <IconArrowLeft size={28} stroke={1.5} />
-        </button>
-        <button
-          aria-label="Toggle dark mode"
-          className="p-2 hover:bg-gray-100 rounded-full transition">
-          <IconMoon size={28} stroke={1.5} />
-        </button>
-      </div>
+      <LeftArrowAndTheme/>
 
       <div className="text-center">
         <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold">
