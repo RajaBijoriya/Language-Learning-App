@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import googleplay from "../../assets/Rate Card.png";
 import play from "../../assets/Play.png";
 import noad from "../../assets/No Ad.png";
@@ -9,7 +10,20 @@ import premium from "../../assets/Premium.png";
 import { Button, Divider, Stepper } from "@mantine/core";
 
 const PremiumScreen = () => {
-    const [active, setActive] = useState(1);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [active, setActive] = useState(1);
+
+  const handleSubscribe = (plan) => {
+    // Here you would typically handle the subscription process
+    // For now, we'll just navigate to the main screen
+    navigate("/start", {
+      state: {
+        ...location.state,
+        selectedPlan: plan,
+      },
+    });
+  };
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-white px-4 sm:px-8 py-10">
       {/* Header Section */}
@@ -26,7 +40,9 @@ const PremiumScreen = () => {
       {/* Pricing Cards Section */}
       <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-10 w-full">
         {/* 12 Month Plan */}
-        <div className="bg-blue-100 rounded-2xl p-5 flex flex-col justify-between items-center w-[130px] sm:w-[160px] md:w-[200px] h-[150px] sm:h-[170px] shadow-md">
+        <div
+          onClick={() => handleSubscribe("12-month")}
+          className="bg-blue-100 rounded-2xl p-5 flex flex-col justify-between items-center w-[130px] sm:w-[160px] md:w-[200px] h-[150px] sm:h-[170px] shadow-md cursor-pointer hover:shadow-lg transition-all">
           <h1 className="font-bold text-base sm:text-lg">12 months</h1>
           <h1 className="text-blue-500 text-sm sm:text-base">
             <span className="line-through">144$</span>{" "}
@@ -39,7 +55,9 @@ const PremiumScreen = () => {
         </div>
 
         {/* 6 Month Plan */}
-        <div className="bg-red-50 rounded-2xl p-5 flex flex-col justify-between items-center w-[130px] sm:w-[160px] md:w-[200px] h-[150px] sm:h-[170px] shadow-md">
+        <div
+          onClick={() => handleSubscribe("6-month")}
+          className="bg-red-50 rounded-2xl p-5 flex flex-col justify-between items-center w-[130px] sm:w-[160px] md:w-[200px] h-[150px] sm:h-[170px] shadow-md cursor-pointer hover:shadow-lg transition-all">
           <h1 className="font-bold text-base sm:text-lg">6 months</h1>
           <h1 className="text-blue-500 text-sm sm:text-base">
             <span className="line-through">72$</span>{" "}
@@ -52,7 +70,9 @@ const PremiumScreen = () => {
         </div>
 
         {/* 1 Month Plan */}
-        <div className="bg-red-50 rounded-2xl p-5 flex flex-col justify-between items-center w-[130px] sm:w-[160px] md:w-[200px] h-[150px] sm:h-[170px] shadow-md">
+        <div
+          onClick={() => handleSubscribe("1-month")}
+          className="bg-red-50 rounded-2xl p-5 flex flex-col justify-between items-center w-[130px] sm:w-[160px] md:w-[200px] h-[150px] sm:h-[170px] shadow-md cursor-pointer hover:shadow-lg transition-all">
           <h1 className="font-bold text-base sm:text-lg">1 month</h1>
           <h1 className="text-blue-500 text-sm sm:text-base font-bold">12$</h1>
           <p className="text-sm sm:text-base font-semibold">12$ per month</p>
@@ -164,26 +184,33 @@ const PremiumScreen = () => {
         <Divider my="sm" size="sm" />
       </div>
 
-
-
       <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] flex flex-col gap-6 mt-8 mb-4">
-              <Button
-                color="#007AFF"
-                radius="md"
-                size="lg"
-                fullWidth
-                className="py-3 text-base sm:text-lg font-medium hover:opacity-90 transition">
-                Try 7 days Free
-              </Button>
-              <Button
-                color="#007AFF"
-                radius="md"
-                size="lg"
-                fullWidth
-                variant="light"
-                className="py-3 text-base sm:text-lg font-medium hover:opacity-90 transition">
-                Skip
-              </Button>
+        <Button
+          color="#007AFF"
+          radius="md"
+          size="lg"
+          fullWidth
+          onClick={() => handleSubscribe("trial")}
+          className="py-3 text-base sm:text-lg font-medium hover:opacity-90 transition">
+          Try 7 days Free
+        </Button>
+        <Button
+          onClick={() =>
+            navigate("/books", {
+              state: {
+                ...location.state,
+                isPremium: false,
+              },
+            })
+          }
+          color="#007AFF"
+          variant="light"
+          radius="md"
+          size="lg"
+          fullWidth
+          className="py-3 text-base sm:text-lg font-medium hover:bg-gray-100 transition">
+           Skip
+        </Button>
       </div>
     </div>
   );

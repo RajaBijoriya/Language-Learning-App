@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo_title from "../../assets/Logo & Title.png";
 import {
   IconArrowLeft,
@@ -10,10 +11,28 @@ import { Button, Divider, Input } from "@mantine/core";
 import LeftArrowAndTheme from "../LeftArrowAndTheme";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+
+  const handleContinue = () => {
+    if (email) {
+      navigate("/create-username");
+    }
+  };
+
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-white px-4 py-6 sm:px-8 md:px-12">
       {/* Top Navigation */}
-    <LeftArrowAndTheme/>
+      <div className="w-full flex items-center justify-between mb-6">
+        <button
+          onClick={() => navigate(-1)}
+          className="p-2 hover:bg-gray-100 rounded-full transition">
+          <IconArrowLeft size={28} stroke={1.5} />
+        </button>
+        <button className="p-2 hover:bg-gray-100 rounded-full transition">
+          <IconMoon size={28} stroke={1.5} />
+        </button>
+      </div>
 
       {/* Logo and Title */}
       <div className="flex flex-col items-center text-center w-full">
@@ -40,12 +59,15 @@ const SignUp = () => {
           radius="md"
           variant="filled"
           placeholder="user@gmail.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
 
       {/* Continue Button */}
       <div className="w-full sm:w-[80%] md:w-[60%] mt-6">
         <Button
+          onClick={handleContinue}
           color="#007AFF"
           radius="md"
           size="lg"

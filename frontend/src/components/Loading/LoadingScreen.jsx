@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import logo8080 from "../../assets/Logo 80_80.png";
 
 const LoadingScreen = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate("/start");
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
   return (
     <div className="flex w-full h-screen justify-center items-center bg-white">
       <div className="flex flex-col justify-center items-center space-y-4 px-4">
@@ -14,7 +24,7 @@ const LoadingScreen = () => {
 
         {/* Subtitle */}
         <p className="text-lg sm:text-sm  md:text-xl text-center tracking-wide">
-          Your personal language <br/> learning tutor
+          Your personal language <br /> learning tutor
         </p>
 
         {/* Animated Loading Bars */}

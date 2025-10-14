@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import HelloIllustration from "../../assets/Hello Illustraton.png";
 import logo from "../../assets/logo.png";
 import { Button } from "@mantine/core";
 import { IconMoon } from "@tabler/icons-react";
 
 const WelcomeScreen = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full min-h-screen flex flex-col justify-between items-center bg-white px-4 py-6 sm:px-6 md:px-12">
       {/* Top Section (Dark mode toggle) */}
@@ -38,6 +41,7 @@ const WelcomeScreen = () => {
       {/* Buttons and text */}
       <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] flex flex-col gap-6 mt-8 mb-4">
         <Button
+          onClick={() => navigate("/signup")}
           color="#007AFF"
           radius="md"
           size="lg"
@@ -47,7 +51,9 @@ const WelcomeScreen = () => {
         </Button>
         <p className="text-center text-base sm:text-lg">
           Already have an account?{" "}
-          <span className="text-blue-500 hover:underline cursor-pointer">
+          <span
+            onClick={() => navigate("/login")}
+            className="text-blue-500 hover:underline cursor-pointer">
             Log in
           </span>
         </p>

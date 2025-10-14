@@ -1,7 +1,11 @@
 import { IconArrowRight, IconBook, IconFlag } from "@tabler/icons-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import LeftArrowAndTheme from "../LeftArrowAndTheme";
 
 const AboutUser = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const selectedLanguage = location.state?.selectedLanguage || "the language";
   return (
     <div className="w-full min-h-screen flex flex-col bg-white px-4 py-6 sm:px-8 md:px-12 lg:px-24">
       {/* Top Navigation */}
@@ -20,22 +24,40 @@ const AboutUser = () => {
       {/* Options Section */}
       <div className="flex flex-col gap-4 mt-8 sm:mt-10 w-full max-w-md sm:max-w-lg md:max-w-xl">
         {/* Option 1 */}
-        <div className="flex justify-between items-center bg-red-50 h-[65px] sm:h-[75px] md:h-[85px] rounded-xl px-5 sm:px-6 cursor-pointer hover:bg-red-100 transition">
+        <div
+          onClick={() =>
+            navigate("/purpose", {
+              state: {
+                ...location.state,
+                experienceLevel: "beginner",
+              },
+            })
+          }
+          className="flex justify-between items-center bg-red-50 h-[65px] sm:h-[75px] md:h-[85px] rounded-xl px-5 sm:px-6 cursor-pointer hover:bg-red-100 transition">
           <div className="flex items-center gap-3 sm:gap-4">
             <IconFlag size={26} className="sm:size-7 md:size-8 text-red-600" />
             <p className="font-semibold text-sm sm:text-base md:text-lg">
-              I don't know English
+              I don't know {selectedLanguage}
             </p>
           </div>
           <IconArrowRight size={22} className="sm:size-6 text-gray-600" />
         </div>
 
         {/* Option 2 */}
-        <div className="flex justify-between items-center bg-red-50 h-[65px] sm:h-[75px] md:h-[85px] rounded-xl px-5 sm:px-6 cursor-pointer hover:bg-red-100 transition">
+        <div
+          onClick={() =>
+            navigate("/purpose", {
+              state: {
+                ...location.state,
+                experienceLevel: "intermediate",
+              },
+            })
+          }
+          className="flex justify-between items-center bg-red-50 h-[65px] sm:h-[75px] md:h-[85px] rounded-xl px-5 sm:px-6 cursor-pointer hover:bg-red-100 transition">
           <div className="flex items-center gap-3 sm:gap-4">
             <IconBook size={26} className="sm:size-7 md:size-8 text-red-600" />
             <p className="font-semibold text-sm sm:text-base md:text-lg">
-              I have already studied English
+              I have already studied {selectedLanguage}
             </p>
           </div>
           <IconArrowRight size={22} className="sm:size-6 text-gray-600" />

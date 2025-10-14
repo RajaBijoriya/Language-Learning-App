@@ -1,8 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@mantine/core";
 import LeftArrowAndTheme from "../LeftArrowAndTheme";
 
 const LearningTime = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const timeOptions = [5, 10, 15, 20, 25, 30, 45, 60];
   const scrollRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(1);
@@ -99,6 +102,14 @@ const LearningTime = () => {
       {/* Continue Button - Fixed at Bottom */}
       <div className="fixed bottom-4 sm:bottom-6 left-0 right-0 flex justify-center px-4 sm:px-8 md:px-12">
         <Button
+          onClick={() =>
+            navigate("/premium", {
+              state: {
+                ...location.state,
+                selectedTime: timeOptions[activeIndex],
+              },
+            })
+          }
           color="#007AFF"
           radius="md"
           size="lg"

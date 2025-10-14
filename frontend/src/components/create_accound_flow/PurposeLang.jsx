@@ -8,9 +8,13 @@ import {
   IconUsersGroup,
   IconWorld,
 } from "@tabler/icons-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import LeftArrowAndTheme from "../LeftArrowAndTheme";
 
 const PurposeLang = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const selectedLanguage = location.state?.selectedLanguage || "the language";
   const purposes = [
     {
       icon: (
@@ -58,7 +62,7 @@ const PurposeLang = () => {
           Welcome User!
         </h1>
         <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mt-2 sm:mt-3 text-gray-800">
-          What do you want to use English for?
+          What do you want to use {selectedLanguage} for?
         </h2>
       </div>
 
@@ -67,6 +71,14 @@ const PurposeLang = () => {
         {purposes.map((item, index) => (
           <div
             key={index}
+            onClick={() =>
+              navigate("/language-level", {
+                state: {
+                  ...location.state,
+                  purpose: item.label,
+                },
+              })
+            }
             className="flex justify-between items-center bg-red-50 h-[65px] sm:h-[75px] md:h-[85px] rounded-xl px-5 sm:px-6 cursor-pointer hover:bg-red-100 transition">
             <div className="flex items-center gap-3 sm:gap-4">
               {item.icon}

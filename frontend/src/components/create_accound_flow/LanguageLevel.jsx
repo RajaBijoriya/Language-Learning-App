@@ -1,9 +1,13 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import logo_level from "../../assets/Level Illustration.png";
 import { Button, Divider } from "@mantine/core";
 import LeftArrowAndTheme from "../LeftArrowAndTheme";
 
 const LanguageLevel = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const selectedLanguage = location.state?.selectedLanguage || "the language";
   return (
     <div className="w-full min-h-screen flex flex-col bg-white text-gray-700 px-4 py-6 sm:px-8 md:px-12 lg:px-24">
       {/* Top Navigation */}
@@ -12,7 +16,7 @@ const LanguageLevel = () => {
       {/* Header Section */}
       <div className="flex flex-col justify-center items-center text-center mt-6 sm:mt-8">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-snug">
-          Log in and continue your learning
+          Determine your {selectedLanguage} level
         </h1>
 
         {/* Illustration */}
@@ -28,6 +32,14 @@ const LanguageLevel = () => {
         {/* Choose Level Button */}
         <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[50%]">
           <Button
+            onClick={() =>
+              navigate("/learning-options", {
+                state: {
+                  ...location.state,
+                  levelDeterminationMethod: "self-assessment",
+                },
+              })
+            }
             color="#007AFF"
             radius="md"
             size="lg"
@@ -45,6 +57,14 @@ const LanguageLevel = () => {
         {/* Screening Test Button */}
         <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[50%]">
           <Button
+            onClick={() =>
+              navigate("/learning-options", {
+                state: {
+                  ...location.state,
+                  levelDeterminationMethod: "screening-test",
+                },
+              })
+            }
             variant="light"
             color="#007AFF"
             radius="md"

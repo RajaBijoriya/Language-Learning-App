@@ -3,6 +3,11 @@ import LevelBox from './combobox/LevelBox'
 import { IconBell, IconBookmark, IconFileStarFilled, IconFlame, IconStar } from '@tabler/icons-react';
 import { Progress } from '@mantine/core';
 import image1 from "../../assets/Image.png"
+import image2 from "../../assets/image2.png"
+import image3 from "../../assets/image3.png"
+import image4 from "../../assets/image4.png"
+import image5 from "../../assets/image5.png"
+import image6 from "../../assets/image6.png"
 import premium_card from '../../assets/Premium Card.png'
 const BookScreen = () => {
   return (
@@ -76,10 +81,128 @@ const BookScreen = () => {
             {/* Right Section: Bookmark Icon */}
             <div className="flex justify-center sm:justify-end">
               <div className="border-2 border-blue-500 rounded-xl p-1 sm:p-2 hover:bg-blue-100 transition">
-                <IconBookmark
-                  size={28}
-                  className=" cursor-pointer"
+                <IconBookmark size={28} className=" cursor-pointer" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center mt-8 px-4">
+          <div className="flex  sm:flex-row justify-between items-center bg-blue-50 rounded-2xl w-full max-w-3xl shadow-sm p-4 sm:p-6 gap-4 sm:gap-6">
+            {/* Left Section: Image + Text */}
+            <div className="flex justify-center items-center gap-3 sm:gap-4">
+              <div className="border-blue-500 border-4 rounded-full flex justify-center items-center p-1">
+                <img
+                  src={image2}
+                  alt=""
+                  className="rounded-full w-14 sm:w-16 md:w-20 object-cover"
                 />
+              </div>
+              <h1 className="text-lg sm:text-xl md:text-2xl text-gray-600 font-semibold text-center sm:text-left leading-snug">
+                Description of <br />
+                travel experiences
+              </h1>
+            </div>
+
+            {/* Right Section: Bookmark Icon */}
+            <div className="flex justify-center sm:justify-end">
+              <div className="border-2 border-blue-500 rounded-xl p-1 sm:p-2 hover:bg-blue-100 transition">
+                <IconBookmark size={28} className=" cursor-pointer" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center mt-8 px-4">
+          <div className="flex  sm:flex-row justify-between items-center bg-blue-50 rounded-2xl w-full max-w-3xl shadow-sm p-4 sm:p-6 gap-4 sm:gap-6">
+            {/* Left Section: Image + Text */}
+            <div className="flex justify-center items-center gap-3 sm:gap-4">
+              <div className="border-blue-500 border-4 rounded-full flex justify-center items-center p-1">
+                <img
+                  src={image3}
+                  alt=""
+                  className="rounded-full w-14 sm:w-16 md:w-20 object-cover"
+                />
+              </div>
+              <h1 className="text-lg sm:text-xl md:text-2xl text-gray-600 font-semibold text-center sm:text-left leading-snug">
+                Discussing types <br /> of vacation
+              </h1>
+            </div>
+
+            {/* Right Section: Bookmark Icon */}
+            <div className="flex justify-center sm:justify-end">
+              <div className="border-2 border-blue-500 rounded-xl p-1 sm:p-2 hover:bg-blue-100 transition">
+                <IconBookmark size={28} className=" cursor-pointer" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center mt-8 px-4">
+          <div className="flex  sm:flex-row justify-between items-center bg-blue-50 rounded-2xl w-full max-w-3xl shadow-sm p-4 sm:p-6 gap-4 sm:gap-6">
+            {/* Left Section: Image + Text */}
+            <div className="flex justify-center items-center gap-3 sm:gap-4">
+              <div className="border-blue-500 border-4 rounded-full flex justify-center items-center p-1">
+                <img
+                  src={image4}
+                  alt=""
+                  className="rounded-full w-14 sm:w-16 md:w-20 object-cover"
+                />
+              </div>
+              <h1 className="text-lg sm:text-xl md:text-2xl text-gray-600 font-semibold text-center sm:text-left leading-snug">
+                Trip planning
+              </h1>
+            </div>
+
+            {/* Right Section: Bookmark Icon */}
+            <div className="flex justify-center sm:justify-end">
+              <div className="border-2 border-blue-500 rounded-xl p-1 sm:p-2 hover:bg-blue-100 transition">
+                <IconBookmark size={28} className=" cursor-pointer" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center mt-8 px-4">
+          <div className="flex  sm:flex-row justify-between items-center bg-blue-50 rounded-2xl w-full max-w-3xl shadow-sm p-4 sm:p-6 gap-4 sm:gap-6">
+            {/* Left Section: Image + Text */}
+            <div className="flex justify-center items-center gap-3 sm:gap-4">
+              <div className="border-blue-500 border-4 rounded-full flex justify-center items-center p-1">
+                <img
+                  src={image5}
+                  alt=""
+                  className="rounded-full w-14 sm:w-16 md:w-20 object-cover"
+                />
+              </div>
+              <h1 className="text-lg sm:text-xl md:text-2xl text-gray-600 font-semibold text-center sm:text-left leading-snug">
+                Developing <br />speaking and <br />writing skills
+              </h1>
+            </div>
+
+            {/* Right Section: Bookmark Icon */}
+            <div className="flex justify-center sm:justify-end">
+              <div className="border-2 border-blue-500 rounded-xl p-1 sm:p-2 hover:bg-blue-100 transition">
+                <IconBookmark size={28} className=" cursor-pointer" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center mt-8 px-4">
+          <div className="flex  sm:flex-row justify-between items-center bg-blue-50 rounded-2xl w-full max-w-3xl shadow-sm p-4 sm:p-6 gap-4 sm:gap-6">
+            {/* Left Section: Image + Text */}
+            <div className="flex justify-center items-center gap-3 sm:gap-4">
+              <div className="border-blue-500 border-4 rounded-full flex justify-center items-center p-1">
+                <img
+                  src={image6}
+                  alt=""
+                  className="rounded-full w-14 sm:w-16 md:w-20 object-cover"
+                />
+              </div>
+              <h1 className="text-lg sm:text-xl md:text-2xl text-gray-600 font-semibold text-center sm:text-left leading-snug">
+               Test Work
+              </h1>
+            </div>
+
+            {/* Right Section: Bookmark Icon */}
+            <div className="flex justify-center sm:justify-end">
+              <div className="border-2 border-blue-500 rounded-xl p-1 sm:p-2 hover:bg-blue-100 transition">
+                <IconBookmark size={28} className=" cursor-pointer" />
               </div>
             </div>
           </div>
