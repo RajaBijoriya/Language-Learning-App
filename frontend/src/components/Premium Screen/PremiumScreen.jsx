@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import googleplay from "../../assets/Rate Card.png";
 import play from "../../assets/Play.png";
 import noad from "../../assets/No Ad.png";
-import innovation from "../../assets/innovation.png";
+import inn from "../../assets/innovation.png";
 import feedback from "../../assets/Feedback.png";
 import certificate from "../../assets/Certificate.png";
 import premium from "../../assets/Premium.png";
@@ -110,7 +110,7 @@ const PremiumScreen = () => {
               text: "Don't get distracted in vain!",
             },
             {
-              img: innovation,
+              img: inn,
               title: "Versatile practice tools",
               text: "Practice what you've learned with spaced repetition.",
             },
