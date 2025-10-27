@@ -2,7 +2,9 @@ import { Button, Tabs } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react'
 import React from 'react'
 import image from '../../assets/Find Friends Illustration.png'
+import { useNavigate } from 'react-router-dom';
 const ChatScreen = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col w-full py-1 px-3">
       <div className="w-full mt-8  ">
@@ -49,7 +51,7 @@ const ChatScreen = () => {
                 sm:w-[80%] md:w-[60%] lg:w-[40%] 
                 mx-auto justify-center items-center">
         <Button
-          onClick={() => navigate("/welcome")}
+          onClick={() => navigate("/Profile")}
           color="#007AFF"
           radius="md"
           size="lg"

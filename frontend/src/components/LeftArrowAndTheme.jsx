@@ -1,9 +1,11 @@
 import { IconArrowLeft, IconMoon } from "@tabler/icons-react";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const LeftArrowAndTheme = ({ onThemeToggle }) => {
   const navigate = useNavigate();
+  const [dark, setDark] = useState(false);
+  console.log(dark);
 
   return (
     <div className="w-full">
@@ -19,7 +21,7 @@ const LeftArrowAndTheme = ({ onThemeToggle }) => {
 
         {/* Theme Icon */}
         <button
-          onClick={onThemeToggle}
+          onClick={() => setDark(!dark)}
           aria-label="Toggle dark mode"
           className="p-2 hover:bg-gray-100 rounded-full transition">
           <IconMoon size={28} stroke={1.5} />

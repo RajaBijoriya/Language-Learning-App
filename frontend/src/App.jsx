@@ -28,41 +28,40 @@ import ProfileScreen from "./components/App_Screen/ProfileScreen";
 
 function App() {
   return (
-    // <Router>
-    //   <div className="min-h-screen w-full bg-white">
-    //     <Routes>
-    //       {/* Main App Screens */}
-    //       <Route path="/" element={<Navigate to="/start" />} />
-    //       <Route path="/start" element={<StartScreen />} />
-    //       <Route path="/welcome" element={<WelcomeScreen />} />
-    //       <Route path="/signup" element={<SignUp />} />
-    //       <Route path="/login" element={<PasswordScreen />} />
-    //       <Route path="/reset-password" element={<ResetPassword />} />
+    <Router>
+      <div className="min-h-screen w-full bg-white">
+        <Routes>
+          {/* Main App Screens */}
+          <Route path="/" element={<Navigate to="/start" />} />
+          <Route path="/start" element={<StartScreen />} />
+          <Route path="/welcome" element={<WelcomeScreen />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<PasswordScreen />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
 
-    //       {/* Account Creation Flow */}
-    //       <Route path="/create-username" element={<CreateUsername />} />
-    //       <Route path="/create-password" element={<CreatePassword />} />
-    //       <Route path="/choose-language" element={<ChooseLanguage />} />
-    //       <Route path="/about-user" element={<AboutUser />} />
-    //       <Route path="/purpose" element={<PurposeLang />} />
-    //       <Route path="/language-level" element={<LanguageLevel />} />
-    //       <Route path="/learning-options" element={<LanguageLearnOption />} />
-    //       <Route path="/learning-method" element={<LearningOptions />} />
-    //       <Route path="/learning-time" element={<LearningTime />} />
+          {/* Account Creation Flow */}
+          <Route path="/create-username" element={<CreateUsername />} />
+          <Route path="/create-password" element={<CreatePassword />} />
+          <Route path="/choose-language" element={<ChooseLanguage />} />
+          <Route path="/about-user" element={<AboutUser />} />
+          <Route path="/purpose" element={<PurposeLang />} />
+          <Route path="/language-level" element={<LanguageLevel />} />
+          <Route path="/learning-options" element={<LanguageLearnOption />} />
+          <Route path="/learning-method" element={<LearningOptions />} />
+          <Route path="/learning-time" element={<LearningTime />} />
 
-    //       {/* Main App Screens */}
-    //       <Route path="/books" element={<BookScreen />} />
-    //       <Route path="/premium" element={<PremiumScreen />} />
-         
-    //       <Route path="/loading" element={<LoadingScreen />} />
-    //     </Routes>
-    //   </div>
-    // </Router>
-    <div>
-      {/* <VocabularyScreen/> */}
-      {/* <ChatScreen/> */}
-      <ProfileScreen/>
-    </div>
+          {/* Main App Screens */}
+          <Route path="/books" element={<BookScreen />} />
+          <Route path="/premium" element={<PremiumScreen />} />
+          <Route path="/loading" element={<LoadingScreen />} />
+
+          {/* Additional App Screens */}
+          <Route path="/vocabulary" element={<VocabularyScreen />} />
+          <Route path="/chat" element={<ChatScreen />} />
+          <Route path="/profile" element={<ProfileScreen />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

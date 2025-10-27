@@ -2,6 +2,8 @@ import { IconMapPin, IconSettings, IconUserPlus } from '@tabler/icons-react';
 import React from 'react'
 import avatar from '../../assets/Avatar.png'
 import { Badge, Divider, Tabs } from '@mantine/core';
+
+
 const ProfileScreen = () => {
   return (
     <div className="flex flex-col w-full py-1 px-3">

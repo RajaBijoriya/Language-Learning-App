@@ -190,7 +190,14 @@ const PremiumScreen = () => {
           radius="md"
           size="lg"
           fullWidth
-          onClick={() => handleSubscribe("trial")}
+          onClick={() =>
+            navigate("/vocabulary", {
+              state: {
+                ...location.state,
+                isPremium: false,
+              },
+            })
+          }
           className="py-3 text-base sm:text-lg font-medium hover:opacity-90 transition">
           Try 7 days Free
         </Button>
@@ -209,7 +216,7 @@ const PremiumScreen = () => {
           size="lg"
           fullWidth
           className="py-3 text-base sm:text-lg font-medium hover:bg-gray-100 transition">
-           Skip
+          Skip
         </Button>
       </div>
     </div>

@@ -1,11 +1,24 @@
-import { IconAlertTriangle, IconBookmark, IconChartBarPopular, IconChevronCompactDown, IconChevronDown, IconCircleDashedCheck, IconCircleDashedX, IconSearch, IconStairsUp } from '@tabler/icons-react';
-import React from 'react'
+import {
+  IconAlertTriangle,
+  IconBookmark,
+  IconChartBarPopular,
+  IconChevronCompactDown,
+  IconChevronDown,
+  IconCircleDashedCheck,
+  IconCircleDashedX,
+  IconSearch,
+  IconStairsUp,
+} from "@tabler/icons-react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import pre1 from "../../assets/Preview1.png";
 import pre2 from "../../assets/Preview2.png";
 import pre3 from "../../assets/Preview3.png";
-import { Button } from '@mantine/core';
-import premium_card from '../../assets/Premium Card.png'
+import { Button } from "@mantine/core";
+import premium_card from "../../assets/Premium Card.png";
 const VocabularyScreen = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col w-full py-1 px-3">
       <div className="w-full mt-8  ">
@@ -155,7 +168,7 @@ const VocabularyScreen = () => {
           color="#007AFF"
           radius="md"
           size="lg"
-          variant='light'
+          variant="light"
           fullWidth
           className="py-3 text-base sm:text-lg md:text-xl font-medium hover:opacity-90 transition">
           Repeat
@@ -171,17 +184,17 @@ const VocabularyScreen = () => {
                 sm:w-[80%] md:w-[60%] lg:w-[40%] 
                 mx-auto justify-center items-center">
         <Button
-          onClick={() => navigate("/welcome")}
+          onClick={() => navigate("/chat")}
           color="#007AFF"
           radius="md"
           size="lg"
           fullWidth
           className="py-3 text-base sm:text-lg md:text-xl font-medium hover:opacity-90 transition">
-          Repeat
+          Chat with Friends
         </Button>
       </div>
     </div>
   );
-}
+};
 
 export default VocabularyScreen;
