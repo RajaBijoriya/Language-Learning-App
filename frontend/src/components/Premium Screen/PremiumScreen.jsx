@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import googleplay from "../../assets/Rate Card.png";
 import play from "../../assets/Play.png";
 import noad from "../../assets/No Ad.png";
-import inn from "../../assets/innovation.png";
+import inn from "../../assets/Innovation.png";
 import feedback from "../../assets/Feedback.png";
 import certificate from "../../assets/Certificate.png";
 import premium from "../../assets/Premium.png";
